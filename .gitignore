@@ -1,0 +1,2 @@
+# 忽略 clip_model_cache 目录及其所有子文件
+clip_model_cache/
