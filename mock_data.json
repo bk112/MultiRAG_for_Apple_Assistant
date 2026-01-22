@@ -1,0 +1,14 @@
+[
+    {
+        "name": "CircuitAlpha",
+        "description": "Basic voltage reference."
+    },
+    {
+        "name": "LogicGateX",
+        "description": "Signal level detection."
+    },
+    {
+        "name": "AmplifierUnitZ",
+        "description": "High gain signal boost."
+    }
+]

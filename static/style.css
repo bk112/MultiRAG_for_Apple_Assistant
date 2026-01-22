@@ -1,0 +1,242 @@
+/* style.css */
+/* Basic Reset & Defaults */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #343a40; /* Dark grey text */
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff; /* White background for content */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    border: 1px solid #dee2e6; /* Light border */
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef; /* Separator */
+}
+
+header h1 {
+    color: #007bff; /* Primary blue color */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #6c757d; /* Muted grey */
+}
+
+/* Form Styling */
+#query-form {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 4px;
+    font-size: 1em;
+    line-height: 1.5;
+    background-color: #fff; /* Ensure background is white */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+input[type="file"] {
+    padding: 8px; /* Adjust padding for file input */
+    background-color: #e9ecef; /* Slightly different background */
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff; /* Primary blue */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button[type="submit"]:disabled {
+    background-color: #6c757d; /* Grey when disabled */
+    cursor: not-allowed;
+}
+
+/* Image Preview */
+.image-preview {
+    display: block;
+    max-width: 200px; /* Limit preview size */
+    max-height: 150px;
+    margin-top: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    object-fit: cover; /* Scale image nicely */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Results Area */
+#results-area {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+#results-area h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #343a40;
+}
+
+.result-section {
+    margin-bottom: 30px;
+}
+
+.result-section h3 {
+    margin-bottom: 15px;
+    color: #007bff;
+    font-weight: 600;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block; /* Keep border tight */
+}
+
+/* Status/Response Boxes */
+.status-box {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.status-pending { background-color: #e9ecef; color: #495057; border-color: #ced4da;}
+.status-processing { background-color: #e2f3ff; color: #0056b3; border-color: #b8daff;}
+.status-success { background-color: #d4edda; color: #155724; border-color: #c3e6cb;}
+.status-error { background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;}
+.status-warning { background-color: #fff3cd; color: #856404; border-color: #ffeeba;}
+
+.response-box {
+    background-color: #f8f9fa; /* Very light grey background */
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    word-wrap: break-word; /* Break long words */
+}
+
+/* Retrieved Documents */
+.docs-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Start with single column */
+    gap: 20px;
+}
+
+.doc-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease;
+}
+
+.doc-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.doc-card p {
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+.doc-card strong {
+    color: #343a40;
+}
+
+.doc-card .doc-id {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.doc-card .doc-score {
+    font-style: italic;
+    color: #155724; /* Green for score */
+}
+
+.doc-card .doc-text {
+    max-height: 100px; /* Limit text preview height */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #6c757d;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* white-space: nowrap; -- Don't use nowrap if you want ellipsis on wrap */
+}
+
+.doc-card .doc-image-path {
+    font-size: 0.9em;
+    color: #868e96;
+    word-break: break-all; /* Break long paths */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .docs-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Multiple columns on wider screens */
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+    font-size: 0.9em;
+    color: #6c757d;
+}

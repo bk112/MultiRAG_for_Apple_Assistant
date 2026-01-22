@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal RAG Query Interface</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Multimodal RAG Query Interface</h1>
+            <p>Ask questions using text, upload an image, or both!</p>
+            <div id="system-status" class="status-box status-pending">System Status: Checking...</div>
+        </header>
+
+        <main>
+            <form id="query-form">
+                <div class="form-group">
+                    <label for="query-text">Text Query:</label>
+                    <textarea id="query-text" name="query_text" rows="4" placeholder="Enter your question here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="query-image">Upload Image (Optional):</label>
+                    <input type="file" id="query-image" name="query_image" accept="image/*">
+                    <img id="image-preview" src="#" alt="Image Preview" class="image-preview hidden"/>
+                </div>
+
+                <button type="submit" id="submit-button">Submit Query</button>
+            </form>
+
+            <div id="results-area">
+                <h2>Results</h2>
+                <div id="status-message" class="status-box"></div>
+
+                <div id="generation-section" class="result-section hidden">
+                    <h3>Generated Response:</h3>
+                    <div id="generated-response" class="response-box"></div>
+                </div>
+
+                <div id="retrieval-section" class="result-section hidden">
+                    <h3>Retrieved Documents:</h3>
+                    <div id="retrieved-docs" class="docs-container">
+                        <!-- Retrieved documents will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by FastAPI &amp; Multimodal RAG</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

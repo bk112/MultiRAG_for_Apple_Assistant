@@ -1,0 +1,4 @@
+{
+    "query_text": "app = FastAPI(\r\n    title=\"Multimodal RAG API\",\r\n    version=\"1.0.0\",\r\n    # docs_url=None, # 禁用 Swagger UI (/docs)\r\n    # redoc_url=None   # 禁用 ReDoc (/redoc)\r\n)",
+    "uploaded_image_filename": null
+}

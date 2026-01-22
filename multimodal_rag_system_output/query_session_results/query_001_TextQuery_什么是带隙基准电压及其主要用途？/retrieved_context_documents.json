@@ -1,0 +1,16 @@
+[
+    {
+        "internal_id": 8,
+        "text": ": 1. **Evidence 1: PTAT Current Generator**\\n   - \\\\( Q1 \\\\) and \\\\( Q2 \\\\): Unequal emitter areas generate \\\\( \\\\Delta V_{BE} \\\\), creating a PTAT voltage proportional to temperature.\\n\\n2. **Evidence 2: CTAT Voltage Source**\\n   - \\\\( Q1 \\\\): Provides a CTAT voltage \\\\( V_{BE} \\\\) directly.\\n\\n3. **Evidence 3: Resistor Network**\\n   - \\\\( R1, R2, R3 \\\\): Combine PTAT and CTAT components to achieve temperature invariance.\\n\\n4. **Evidence 4: Stable Output Voltage**\\n   - Feedback from \\\\( A0 \\\\) ensures that \\\\( V_{REF} \\\\) remains stable (~1.2V typical).\\n\\n5. **Evidence 5: Feedback Loop**\\n   - \\\\( A0 \\\\): Regulates the summing node and buffers the output.\\n\\nThis circuit aligns perfectly with the working principles of a bandgap reference circuit. It uses the properties of silicon PN junctions to combine PTAT and CTAT components, creating a temperature-invariant reference voltage.\"\n}",
+        "image_path": "images\\Bandgap32.png",
+        "id": "Bandgap32",
+        "score": 0.7524453401565552
+    },
+    {
+        "internal_id": 71,
+        "text": "#### **Evidence Supporting Comparator Functionality:**\n1. **Differential Input Stage:**\n   - **Components:** NMOS transistors (M1, M2).\n   - **Role:** Compares \\( V_{in+} \\) and \\( V_{in-} \\), producing differential currents.\n\n2. **Current Mirror Load:**\n   - **Components:** PMOS transistors (M3, M4).\n   - **Role:** Converts current difference to voltage for gain stage input.\n\n3. **Gain Stage:**\n   - **Component:** NMOS transistor (M5).\n   - **Role:** Amplifies differential voltage, ensuring robust output switching.\n\n4. **Output Buffer:**\n   - **Components:** CMOS inverter (M6, M7).\n   - **Role:** Converts analog voltage into digital output.\n\n5. **Bias Control:**\n   - **Component:** Bias generator circuit.\n   - **Role:** Maintains stable current and enhances CMRR.\n\n6. **Hysteresis Path (if implemented):**\n   - **Role:** Improves switching stability and noise immunity.\n\n#### **Performance Observations:**\n- **Input Offset Voltage:** Determined by mismatches in threshold voltages.\n- **Propagation Delay:** Reduced by high-gain design.\n- **Output Swing:** Achieves rail-to-rail via CMOS inverter.\n- **CMRR/PSRR:** Enhanced by bias control and differential layout.\n- **Hysteresis:** If present, stabilizes switching thresholds.\n\n---\n\n**Final Assessment:**\nThe circuit operates as a comparator based on its design features, including a differential input stage, current mirror load, gain stage, and digital output buffer. Optional hysteresis further improves performance in noisy environments.\n",
+        "image_path": "images\\Comparator28.png",
+        "id": "Comparator28",
+        "score": 0.7440886497497559
+    }
+]

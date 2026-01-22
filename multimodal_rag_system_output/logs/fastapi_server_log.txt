@@ -1,0 +1,69 @@
+2025-05-12 21:20:02,344 - INFO - [RAGCore:125] - Global logger setup complete. Logging to console and file: multimodal_rag_system_output\logs\fastapi_server_log.txt
+2025-05-12 21:20:02,344 - INFO - [RAGCore.Indexer:481] - Initializing Indexer...
+2025-05-12 21:20:02,345 - INFO - [RAGCore.Indexer:487] -   Database path: multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db
+2025-05-12 21:20:02,345 - INFO - [RAGCore.Indexer:488] -   Text index path: multimodal_rag_system_output\data_storage\vector_indices\text_vector_index.faiss
+2025-05-12 21:20:02,346 - INFO - [RAGCore.Indexer:489] -   Image index path: multimodal_rag_system_output\data_storage\vector_indices\image_vector_index.faiss
+2025-05-12 21:20:02,346 - INFO - [RAGCore.Indexer:490] -   Mean index path: multimodal_rag_system_output\data_storage\vector_indices\mean_vector_index.faiss
+2025-05-12 21:20:02,346 - INFO - [RAGCore.Indexer:493] -   Initializing internal MultimodalEncoder with CLIP model: openai/clip-vit-base-patch32...
+2025-05-12 21:20:02,347 - INFO - [RAGCore.MultimodalEncoder:296] - Initializing MultimodalEncoder with CLIP model: openai/clip-vit-base-patch32
+2025-05-12 21:20:05,230 - INFO - [RAGCore.MultimodalEncoder:301] - CLIP Processor for 'openai/clip-vit-base-patch32' loaded successfully.
+2025-05-12 21:20:07,085 - INFO - [RAGCore.MultimodalEncoder:305] - CLIP Model 'openai/clip-vit-base-patch32' loaded successfully.
+2025-05-12 21:20:07,086 - INFO - [RAGCore.MultimodalEncoder:309] - CLIP model vector dimension: 512
+2025-05-12 21:20:07,087 - INFO - [RAGCore.MultimodalEncoder:320] - CUDA not available. Model will run on CPU (encoding may be slower).
+2025-05-12 21:20:07,091 - INFO - [RAGCore.MultimodalEncoder:323] - Model moved to device: cpu
+2025-05-12 21:20:07,091 - INFO - [RAGCore.MultimodalEncoder:324] - MultimodalEncoder initialized successfully. Ready for encoding tasks.
+2025-05-12 21:20:07,092 - INFO - [RAGCore.Indexer:497] -   Internal MultimodalEncoder initialized. Vector dimension: 512.
+2025-05-12 21:20:07,092 - INFO - [RAGCore.Indexer:503] -   Initializing SQLite database at 'multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db'...
+2025-05-12 21:20:07,092 - INFO - [RAGCore.Indexer:530] - Connecting to and initializing database schema at: 'multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db'...
+2025-05-12 21:20:07,094 - INFO - [RAGCore.Indexer:556] - Database table 'documents' and index 'idx_doc_id' initialized or already exist.
+2025-05-12 21:20:07,094 - INFO - [RAGCore.Indexer:506] -   SQLite database initialization complete.
+2025-05-12 21:20:07,095 - INFO - [RAGCore.Indexer:512] -   Loading or creating Faiss vector indices...
+2025-05-12 21:20:07,095 - INFO - [RAGCore.Indexer:578] - Loading or creating Faiss index for 'Text' at: 'multimodal_rag_system_output\data_storage\vector_indices\text_vector_index.faiss'...
+2025-05-12 21:20:07,096 - INFO - [RAGCore.Indexer:592] - Found existing 'Text' Faiss index file, attempting to load: multimodal_rag_system_output\data_storage\vector_indices\text_vector_index.faiss
+2025-05-12 21:20:07,097 - INFO - [RAGCore.Indexer:594] - File 'multimodal_rag_system_output\data_storage\vector_indices\text_vector_index.faiss' read successfully. Contains 218 vectors, dimension 512.
+2025-05-12 21:20:07,097 - INFO - [RAGCore.Indexer:602] - Successfully loaded 'Text' Faiss index. Dimensions match (512). Contains 218 vectors.
+2025-05-12 21:20:07,097 - INFO - [RAGCore.Indexer:578] - Loading or creating Faiss index for 'Image' at: 'multimodal_rag_system_output\data_storage\vector_indices\image_vector_index.faiss'...
+2025-05-12 21:20:07,098 - INFO - [RAGCore.Indexer:592] - Found existing 'Image' Faiss index file, attempting to load: multimodal_rag_system_output\data_storage\vector_indices\image_vector_index.faiss
+2025-05-12 21:20:07,099 - INFO - [RAGCore.Indexer:594] - File 'multimodal_rag_system_output\data_storage\vector_indices\image_vector_index.faiss' read successfully. Contains 212 vectors, dimension 512.
+2025-05-12 21:20:07,099 - INFO - [RAGCore.Indexer:602] - Successfully loaded 'Image' Faiss index. Dimensions match (512). Contains 212 vectors.
+2025-05-12 21:20:07,099 - INFO - [RAGCore.Indexer:578] - Loading or creating Faiss index for 'Mean' at: 'multimodal_rag_system_output\data_storage\vector_indices\mean_vector_index.faiss'...
+2025-05-12 21:20:07,100 - INFO - [RAGCore.Indexer:592] - Found existing 'Mean' Faiss index file, attempting to load: multimodal_rag_system_output\data_storage\vector_indices\mean_vector_index.faiss
+2025-05-12 21:20:07,101 - INFO - [RAGCore.Indexer:594] - File 'multimodal_rag_system_output\data_storage\vector_indices\mean_vector_index.faiss' read successfully. Contains 212 vectors, dimension 512.
+2025-05-12 21:20:07,102 - INFO - [RAGCore.Indexer:602] - Successfully loaded 'Mean' Faiss index. Dimensions match (512). Contains 212 vectors.
+2025-05-12 21:20:07,102 - INFO - [RAGCore.Indexer:517] -   All Faiss indices are ready.
+2025-05-12 21:20:07,102 - INFO - [RAGCore.Indexer:522] - Indexer initialized successfully. I will ensure index accuracy and efficiency.
+2025-05-12 21:20:07,104 - INFO - [RAGCore.Retriever:1141] - Initializing Retriever...
+2025-05-12 21:20:07,105 - INFO - [RAGCore.Retriever:1160] -   Using Indexer's encoder. Vector dimension: 512
+2025-05-12 21:20:07,106 - INFO - [RAGCore.Retriever:1175] - Retriever initialized successfully. Associated index status:
+2025-05-12 21:20:07,106 - INFO - [RAGCore.Retriever:1176] -     - Text index vectors: 218
+2025-05-12 21:20:07,107 - INFO - [RAGCore.Retriever:1177] -     - Image index vectors: 212
+2025-05-12 21:20:07,108 - INFO - [RAGCore.Retriever:1178] -     - Mean index vectors: 212
+2025-05-12 21:20:07,109 - INFO - [RAGCore.Retriever:1179] - Retriever ready to perform searches.
+2025-05-12 21:20:07,110 - INFO - [RAGCore.Generator:1441] - Initializing Generator with ZhipuAI model: glm-4-flash
+2025-05-12 21:20:07,111 - INFO - [RAGCore.Generator:1453] - ZhipuAI API Key found (from param or env var).
+2025-05-12 21:20:07,696 - INFO - [RAGCore.Generator:1459] - ZhipuAI client initialized successfully for model 'glm-4-flash'.
+2025-05-12 21:20:07,696 - INFO - [RAGCore.Generator:1465] - Generator initialized successfully. Ready to generate responses.
+2025-05-12 21:20:10,256 - INFO - [RAGCore.Retriever:1196] - Starting retrieval process for Top-3 documents...
+2025-05-12 21:20:10,257 - INFO - [RAGCore.Retriever:1211] -     Query type: pure_text (from string)
+2025-05-12 21:20:10,257 - INFO - [RAGCore.Retriever:1212] -     Query text: 'app = FastAPI(
+    title="Multimodal RAG API",
+    version="1.0.0",
+    # docs_url=None, # 禁用 Swa...'
+2025-05-12 21:20:10,366 - INFO - [RAGCore.MultimodalEncoder:439] - Encoding finished for (Text='app = FastAPI(
+    title="Mul...'). Successfully generated: text_vector.
+2025-05-12 21:20:10,366 - INFO - [RAGCore.Retriever:1260] -     Query encoding complete.
+2025-05-12 21:20:10,367 - INFO - [RAGCore.Retriever:1285] -     Strategy: Use text vector, search in Text Index (218 vectors).
+2025-05-12 21:20:10,378 - INFO - [RAGCore.Retriever:1365] -     Faiss search found 3 potential document internal_ids.
+2025-05-12 21:20:10,380 - INFO - [RAGCore.Retriever:1377] -     Successfully fetched metadata for 3 documents from DB.
+2025-05-12 21:20:10,380 - INFO - [RAGCore.Retriever:1405] - Retrieval process complete. Returning 3 documents.
+2025-05-12 21:20:10,380 - INFO - [RAGCore.Generator:1479] - Starting response generation using LLM...
+2025-05-12 21:20:10,380 - INFO - [RAGCore.Generator:1480] -   User query: 'app = FastAPI(
+    title="Multimodal RAG API",
+    version="1.0.0",
+    # docs_url=None, # 禁用 Swa...'
+2025-05-12 21:20:10,381 - INFO - [RAGCore.Generator:1481] -   Using 3 retrieved documents as context.
+2025-05-12 21:20:10,381 - INFO - [RAGCore.Generator:1612] -     Formatting 3 retrieved documents for the prompt...
+2025-05-12 21:20:10,381 - INFO - [RAGCore.Generator:1507] -   Calling ZhipuAI Chat API (model: glm-4-flash)...
+2025-05-12 21:20:22,273 - INFO - [RAGCore.Generator:1527] -     ZhipuAI API call successful. Received response.
+2025-05-12 21:20:22,273 - INFO - [RAGCore.Generator:1545] -       Token Usage - Prompt: 1341, Completion: 393, Total: 1734
+2025-05-12 21:20:22,273 - INFO - [RAGCore.Generator:1571] - LLM response generation finished.

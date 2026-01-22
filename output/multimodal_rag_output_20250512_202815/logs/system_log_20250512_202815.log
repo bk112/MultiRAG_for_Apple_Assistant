@@ -1,0 +1,23 @@
+2025-05-12 20:28:15,395 - INFO - [RAGCore.py.setup_logging:35] - Global logger configured. Logs will be written to: output\multimodal_rag_output_20250512_202815\logs\system_log_20250512_202815.log
+2025-05-12 20:28:15,397 - INFO - [RAGCore.py.__init__:567] - Database file: output\multimodal_rag_output_20250512_202815\data_storage\database\documents.db
+2025-05-12 20:28:15,397 - INFO - [RAGCore.py.__init__:568] - Faiss index files directory: output\multimodal_rag_output_20250512_202815\data_storage\vector_indices
+2025-05-12 20:28:15,397 - INFO - [RAGCore.py.__init__:569] - Query session results directory: output\multimodal_rag_output_20250512_202815\query_session_results
+2025-05-12 20:28:15,397 - INFO - [RAGCore.py.__init__:572] - Model configuration: CLIP Model='openai/clip-vit-base-patch32', LLM='glm-4-flash'
+2025-05-12 20:28:15,398 - INFO - [RAGCore.py.__init__:573] - --- Step 1: Load document data from JSON and associate images ---
+2025-05-12 20:28:15,398 - INFO - [RAGCore.py.load_data_from_json_and_associate_images:55] - Loading data from JSON file 'data.json' and associating images from directory 'images'...
+2025-05-12 20:28:15,401 - INFO - [RAGCore.py.load_data_from_json_and_associate_images:73] - Successfully loaded 219 raw records from 'data.json'.
+2025-05-12 20:28:15,419 - WARNING - [RAGCore.py.load_data_from_json_and_associate_images:91] - Warning: Skipping record #104 (JSON index 103), reason: 'description' field missing or empty. Content: {'name': 'Comparator58', 'description': '\n'}
+2025-05-12 20:28:15,437 - INFO - [RAGCore.py.load_data_from_json_and_associate_images:112] - Successfully prepared 218 documents for further processing.
+2025-05-12 20:28:15,437 - WARNING - [RAGCore.py.load_data_from_json_and_associate_images:114] - In the raw JSON data, 1 records were skipped due to invalid format or missing 'name'/'description' fields.
+2025-05-12 20:28:15,437 - INFO - [RAGCore.py.load_data_from_json_and_associate_images:115] - Among valid documents, 212 documents were successfully associated with image files.
+2025-05-12 20:28:15,437 - INFO - [RAGCore.py.load_data_from_json_and_associate_images:119] - --- Data loading and image association process completed ---
+2025-05-12 20:28:15,438 - INFO - [RAGCore.py.__init__:578] - Loaded 218 documents for indexing.
+2025-05-12 20:28:15,438 - INFO - [RAGCore.py.__init__:579] - --- Step 2: Initialize Indexer and build index ---
+2025-05-12 20:28:15,438 - INFO - [RAGCore.py.__init__:232] - Initializing Indexer...
+2025-05-12 20:28:15,438 - INFO - [RAGCore.py.__init__:237] -   Database path: output\multimodal_rag_output_20250512_202815\data_storage\database\documents.db
+2025-05-12 20:28:15,438 - INFO - [RAGCore.py.__init__:238] -   Text index path: output\multimodal_rag_output_20250512_202815\data_storage\vector_indices\text_vector_index.faiss
+2025-05-12 20:28:15,439 - INFO - [RAGCore.py.__init__:239] -   Image index path: output\multimodal_rag_output_20250512_202815\data_storage\vector_indices\image_vector_index.faiss
+2025-05-12 20:28:15,439 - INFO - [RAGCore.py.__init__:240] -   Mean vector index path: output\multimodal_rag_output_20250512_202815\data_storage\vector_indices\mean_vector_index.faiss
+2025-05-12 20:28:15,439 - INFO - [RAGCore.py.__init__:241] -   - Initializing internal MultimodalEncoder with CLIP model: openai/clip-vit-base-patch32...
+2025-05-12 20:28:15,439 - INFO - [RAGCore.py.__init__:125] - Initializing MultimodalEncoder, loading CLIP model: openai/clip-vit-base-patch32
+2025-05-12 20:28:17,861 - INFO - [RAGCore.py.__init__:128] - CLIP Processor for 'openai/clip-vit-base-patch32' loaded successfully.

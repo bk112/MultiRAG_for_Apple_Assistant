@@ -1,0 +1,16 @@
+[
+    {
+        "internal_id": 17,
+        "text": ": Evidence for Bandgap Reference Circuit Identification:**\\n1. **PTAT Voltage Generation:** Q1 and Q2, with unequal emitter areas, generate a \\\\( \\\\Delta V_{BE} \\\\) voltage proportional to temperature.\\n2. **CTAT Voltage Source:** Q3 provides a CTAT voltage from its base-emitter junction.\\n3. **Voltage Summing:** R1-R2 combine PTAT and CTAT components to produce a stable output voltage.\\n4. **Output Voltage Stability:** \\\\( V_{REF} \\\\) (~1.2V) is independent of temperature and supply variations, characteristic of a bandgap reference.\\n5. **Feedback Structure:** The current mirrors (M1–M5) ensure proper biasing and stability of the circuit.This circuit is conclusively identified as a **Bandgap Reference Circuit** due to its structure, components, and operational principles.\"\n}",
+        "image_path": "images\\Bandgap40.png",
+        "id": "Bandgap40",
+        "score": 0.8724386096000671
+    },
+    {
+        "internal_id": 7,
+        "text": "**\\n\\n**Evidence for Bandgap Reference Circuit Identification:**\\n\\n1. **PTAT Voltage Generation:**  \\n   - Q2 generate \\\\( \\\\Delta V_{BE} \\\\), a PTAT voltage proportional to temperature.\\n\\n2. **CTAT Voltage Source:**  \\n   - Q1 provides a CTAT voltage (\\\\( V_{BE} \\\\)) that decreases linearly with temperature.\\n\\n3. **Resistor Network(R1-R3):**  \\n   - The resistor network combines PTAT and CTAT contributions, achieving temperature coefficient cancellation.\\n\\n4. **Stable Output Voltage :**  \\n   - The circuit generates a stable voltage at \\\\( V_{REF} \\\\), characteristic of a bandgap reference.\\n\\n5. **Feedback Mechanism:**  \\n   - The operational amplifier ensures stability and temperature compensation.\\n\\nThis circuit aligns with all principles of a bandgap reference circuit, providing a stable output voltage independent of temperature and supply variations.\"\n}",
+        "image_path": "images\\Bandgap31.png",
+        "id": "Bandgap31",
+        "score": 0.8658873438835144
+    }
+]

@@ -1,0 +1,13 @@
+In a bandgap reference circuit, the PTAT (Proportional To Absolute Temperature) current is generated primarily through the use of transistors Q1, Q2, and resistors R0, R2. Here's how it is generated and its role:
+
+1. **Generation of PTAT Voltage:**
+   - The transistors Q1 and Q2, along with resistors R0 and R2, form a part of the circuit. 
+   - The voltage difference across the base-emitter junctions of these transistors, denoted as \( \Delta V_{BE} \), is temperature-dependent and varies almost linearly with temperature. This voltage is PTAT because it is proportional to the absolute temperature.
+   - The presence of Q1, Q2, and R0-R2 contributes to the generation of a PTAT voltage.
+
+2. **Role in the Bandgap Circuit:**
+   - The PTAT voltage is one of the key components used to create a stable reference voltage that is less sensitive to temperature variations.
+   - In the context of a bandgap reference circuit, the PTAT voltage helps in balancing out the temperature-dependent voltage variations caused by the components.
+   - It is combined with another voltage source, typically a CTAT (Current Temperature-Dependent) voltage, to produce a voltage that is relatively constant over a wide temperature range.
+
+In summary, the PTAT current in a bandgap circuit is generated through the temperature-dependent voltage across the base-emitter junctions of transistors, and its role is to provide a temperature-sensitive component that helps in achieving temperature stability and reducing the temperature dependence of the reference voltage.

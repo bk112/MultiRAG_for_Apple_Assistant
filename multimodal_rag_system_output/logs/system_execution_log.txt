@@ -1,0 +1,150 @@
+2025-10-10 17:26:23,538 - INFO - [MultimodalRAG.py.setup_logging:83] - 全局日志记录器配置完成。日志将同时输出到控制台，并写入文件: multimodal_rag_system_output\logs\system_execution_log.txt
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2037] - 
+================================================================================
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2038] - ========= Multimodal Retrieval-Augmented Generation (RAG) System =========
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2039] - =========                     Main Execution Start                   =========
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2040] - ================================================================================
+
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2041] - User-defined run identifier (used as fixed directory name): multimodal_rag_system_output
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2042] - Sanitized run identifier (final directory name): multimodal_rag_system_output
+2025-10-10 17:26:23,539 - INFO - [MultimodalRAG.py.<module>:2043] - All output data will be saved to the fixed top-level directory: E:\_Python_ProgramPath\RAG学习\MultimodalRAG-main\multimodal_rag_system_output
+2025-10-10 17:26:23,540 - WARNING - [MultimodalRAG.py.<module>:2044] - NOTE: This top-level output directory name is fixed. Subsequent runs with the same identifier will OVERWRITE content in this directory (including logs, database, indices, and query results).
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2050] - Data source config: JSON metadata file='data.json', Image directory='images'
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2074] - Database file will be saved to: multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2075] - Faiss index files will be saved to directory: multimodal_rag_system_output\data_storage\vector_indices
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2076] - Query session results will be saved to directory: multimodal_rag_system_output\query_session_results
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2086] - Model configuration: CLIP Model='./clip_model_cache', Large Language Model (LLM)='glm-4-flash'
+2025-10-10 17:26:23,540 - INFO - [MultimodalRAG.py.<module>:2092] - 
+--- [Main Flow] Step 1: Load document data from JSON and associate images files ---
+2025-10-10 17:26:23,541 - INFO - [MultimodalRAG.py.load_data_from_json_and_associate_images:159] - 开始从 JSON 文件 'data.json' 加载数据，并在目录 'images' 中关联图像...
+2025-10-10 17:26:23,541 - INFO - [MultimodalRAG.py.load_data_from_json_and_associate_images:192] - 已成功从 'data.json' 加载 1 条原始记录。
+2025-10-10 17:26:23,541 - INFO - [MultimodalRAG.py.load_data_from_json_and_associate_images:258] - 成功准备了 1 个文档用于后续处理。
+2025-10-10 17:26:23,541 - INFO - [MultimodalRAG.py.load_data_from_json_and_associate_images:261] - 在有效文档中，共有 1 个文档成功关联了图像文件。
+2025-10-10 17:26:23,541 - INFO - [MultimodalRAG.py.load_data_from_json_and_associate_images:268] - --- 数据加载与图像关联流程结束 ---
+2025-10-10 17:26:23,542 - INFO - [MultimodalRAG.py.<module>:2101] - --- [Main Flow] Step 1 Complete: Successfully loaded and prepared 1 documents for indexing. ---
+
+2025-10-10 17:26:23,754 - INFO - [MultimodalRAG.py.<module>:2108] - --- [Main Flow] Step 2: Initialize Indexer and build index for loaded documents ---
+2025-10-10 17:26:23,754 - INFO - [MultimodalRAG.py.__init__:576] - 开始初始化 Indexer...
+2025-10-10 17:26:23,754 - INFO - [MultimodalRAG.py.__init__:583] -   数据库路径: multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db
+2025-10-10 17:26:23,754 - INFO - [MultimodalRAG.py.__init__:584] -   文本索引路径: multimodal_rag_system_output\data_storage\vector_indices\my_text_vector_index.faiss
+2025-10-10 17:26:23,755 - INFO - [MultimodalRAG.py.__init__:585] -   图像索引路径: multimodal_rag_system_output\data_storage\vector_indices\my_image_vector_index.faiss
+2025-10-10 17:26:23,755 - INFO - [MultimodalRAG.py.__init__:586] -   平均向量索引路径: multimodal_rag_system_output\data_storage\vector_indices\my_mean_vector_index.faiss
+2025-10-10 17:26:23,755 - INFO - [MultimodalRAG.py.__init__:590] -   - 正在初始化内部 MultimodalEncoder，使用 CLIP 模型: ./clip_model_cache...
+2025-10-10 17:26:23,755 - INFO - [MultimodalRAG.py.__init__:310] - 开始初始化 MultimodalEncoder，尝试加载 CLIP 模型: ./clip_model_cache
+2025-10-10 17:26:24,036 - INFO - [MultimodalRAG.py.__init__:319] - CLIP Processor for './clip_model_cache' 加载成功。
+2025-10-10 17:26:24,758 - INFO - [MultimodalRAG.py.__init__:323] - CLIP Model './clip_model_cache' 加载成功。
+2025-10-10 17:26:24,758 - INFO - [MultimodalRAG.py.__init__:329] - CLIP 模型的特征向量维度为: 512
+2025-10-10 17:26:24,762 - INFO - [MultimodalRAG.py.__init__:343] - 未检测到 CUDA 支持，模型将运行在 CPU 上 (编码速度可能较慢)。
+2025-10-10 17:26:24,772 - INFO - [MultimodalRAG.py.__init__:346] - 模型已成功移动到设备: cpu
+2025-10-10 17:26:24,772 - INFO - [MultimodalRAG.py.__init__:347] - MultimodalEncoder 初始化成功完成。我已经准备好进行编码工作了。
+2025-10-10 17:26:24,772 - INFO - [MultimodalRAG.py.__init__:594] -   - MultimodalEncoder 初始化完成。特征向量维度为: 512。
+2025-10-10 17:26:24,772 - INFO - [MultimodalRAG.py.__init__:601] -   - 正在初始化 SQLite 数据库，路径: 'multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db'...
+2025-10-10 17:26:24,772 - INFO - [MultimodalRAG.py._init_db:634] - 正在连接并初始化数据库表结构于路径: 'multimodal_rag_system_output\data_storage\database\multimodal_doc_store.db'...
+2025-10-10 17:26:24,773 - INFO - [MultimodalRAG.py._init_db:672] - 数据库表 'documents' (及索引 'idx_doc_id') 初始化成功，或已存在。
+2025-10-10 17:26:24,773 - INFO - [MultimodalRAG.py.__init__:604] -   - SQLite 数据库初始化完成。
+2025-10-10 17:26:24,773 - INFO - [MultimodalRAG.py.__init__:613] -   - 正在加载或创建 Faiss 向量索引...
+2025-10-10 17:26:28,745 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:696] - 正在为 '文本(Text)' 索引加载或创建 Faiss 文件于路径: 'multimodal_rag_system_output\data_storage\vector_indices\my_text_vector_index.faiss'...
+2025-10-10 17:26:33,788 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:730] - 未找到 '文本(Text)' Faiss 索引文件: 'multimodal_rag_system_output\data_storage\vector_indices\my_text_vector_index.faiss'。将创建一个新的空索引。
+2025-10-10 17:26:36,115 - INFO - [MultimodalRAG.py._create_new_faiss_index:755] - 开始为 '文本(Text)' 创建一个新的空 Faiss 索引...
+2025-10-10 17:26:36,122 - INFO - [MultimodalRAG.py._create_new_faiss_index:774] - 已成功为 '文本(Text)' 创建一个新的、空的 Faiss 索引 (类型: IndexIDMap2 包裹 IndexFlatIP)。
+2025-10-10 17:26:36,122 - INFO - [MultimodalRAG.py._create_new_faiss_index:775] -     索引维度: 512。
+2025-10-10 17:26:36,122 - INFO - [MultimodalRAG.py._create_new_faiss_index:776] -     相似度度量: 内积 (Inner Product) - 对于归一化向量，这等同于余弦相似度。
+2025-10-10 17:26:41,972 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:696] - 正在为 '图像(Image)' 索引加载或创建 Faiss 文件于路径: 'multimodal_rag_system_output\data_storage\vector_indices\my_image_vector_index.faiss'...
+2025-10-10 17:26:45,074 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:730] - 未找到 '图像(Image)' Faiss 索引文件: 'multimodal_rag_system_output\data_storage\vector_indices\my_image_vector_index.faiss'。将创建一个新的空索引。
+2025-10-10 17:26:45,415 - INFO - [MultimodalRAG.py._create_new_faiss_index:755] - 开始为 '图像(Image)' 创建一个新的空 Faiss 索引...
+2025-10-10 17:26:45,415 - INFO - [MultimodalRAG.py._create_new_faiss_index:774] - 已成功为 '图像(Image)' 创建一个新的、空的 Faiss 索引 (类型: IndexIDMap2 包裹 IndexFlatIP)。
+2025-10-10 17:26:45,415 - INFO - [MultimodalRAG.py._create_new_faiss_index:775] -     索引维度: 512。
+2025-10-10 17:26:45,416 - INFO - [MultimodalRAG.py._create_new_faiss_index:776] -     相似度度量: 内积 (Inner Product) - 对于归一化向量，这等同于余弦相似度。
+2025-10-10 17:26:47,088 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:696] - 正在为 '平均(Mean)' 索引加载或创建 Faiss 文件于路径: 'multimodal_rag_system_output\data_storage\vector_indices\my_mean_vector_index.faiss'...
+2025-10-10 17:26:49,401 - INFO - [MultimodalRAG.py._load_or_create_faiss_index:730] - 未找到 '平均(Mean)' Faiss 索引文件: 'multimodal_rag_system_output\data_storage\vector_indices\my_mean_vector_index.faiss'。将创建一个新的空索引。
+2025-10-10 17:26:49,726 - INFO - [MultimodalRAG.py._create_new_faiss_index:755] - 开始为 '平均(Mean)' 创建一个新的空 Faiss 索引...
+2025-10-10 17:26:49,726 - INFO - [MultimodalRAG.py._create_new_faiss_index:774] - 已成功为 '平均(Mean)' 创建一个新的、空的 Faiss 索引 (类型: IndexIDMap2 包裹 IndexFlatIP)。
+2025-10-10 17:26:49,726 - INFO - [MultimodalRAG.py._create_new_faiss_index:775] -     索引维度: 512。
+2025-10-10 17:26:49,726 - INFO - [MultimodalRAG.py._create_new_faiss_index:776] -     相似度度量: 内积 (Inner Product) - 对于归一化向量，这等同于余弦相似度。
+2025-10-10 17:26:51,355 - INFO - [MultimodalRAG.py.__init__:618] -   - 所有 Faiss 索引均已准备就绪。
+2025-10-10 17:26:51,775 - INFO - [MultimodalRAG.py.__init__:624] - Indexer 初始化成功完成。我将竭尽全力确保索引的准确和高效。
+2025-10-10 17:26:53,342 - INFO - [MultimodalRAG.py.index_documents:799] - 开始执行文档索引流程，准备处理 1 个文档...
+2025-10-10 17:26:53,342 - INFO - [MultimodalRAG.py.index_documents:829] - 开始遍历 1 个文档进行处理和编码...
+2025-10-10 17:26:53,349 - INFO - [MultimodalRAG.py.index_documents:961] - 所有 1 个输入文档已遍历处理完毕。
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:962] - 准备将收集到的向量批量添加到 Faiss 索引中...
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:963] -   - 待添加文本向量数量: 0
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:964] -   - 待添加图像向量数量: 0
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:965] -   - 待添加平均向量数量: 0
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:1005] - 数据库事务已成功提交。元数据更改已持久化。
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:1027] - 
+--- 文档索引过程总结 ---
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:1028] - - 输入文档总数: 1
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:1029] - - 因输入无效(缺少ID或内容)跳过的文档数: 0
+2025-10-10 17:26:53,350 - INFO - [MultimodalRAG.py.index_documents:1030] - - 因 'doc_id' 在数据库中已存在而跳过的文档数: 1
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1031] - - 因检查重复项时数据库错误跳过的文档数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1032] - - 因编码未能生成有效向量而跳过的文档数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1033] - - 因数据库插入错误而跳过的文档数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1034] - - 成功处理(编码成功+DB插入成功+准备添加到Faiss)的文档数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1035] - - 向 Faiss 添加向量时发生错误的索引数量: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1041] - - 当前文本 Faiss 索引中的向量总数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1042] - - 当前图像 Faiss 索引中的向量总数: 0
+2025-10-10 17:26:53,351 - INFO - [MultimodalRAG.py.index_documents:1043] - - 当前平均 Faiss 索引中的向量总数: 0
+2025-10-10 17:26:53,352 - INFO - [MultimodalRAG.py.index_documents:1047] - - 当前 SQLite 数据库中存储的文档元数据记录总数: 219
+2025-10-10 17:26:53,353 - WARNING - [MultimodalRAG.py.index_documents:1059] - 数据一致性提示：数据库记录数 (219) 多于 Faiss 索引中的最大向量数 (0)。
+2025-10-10 17:26:53,353 - WARNING - [MultimodalRAG.py.index_documents:1060] -                  这可能是正常的（例如，部分文档只有文本没有图像，或反之），但也可能表示部分向量未能添加成功。请检查日志。
+2025-10-10 17:26:53,353 - INFO - [MultimodalRAG.py.index_documents:1067] - --- 文档索引过程结束 ---
+2025-10-10 17:27:04,754 - INFO - [MultimodalRAG.py.<module>:2122] - Index building/loading complete. Current status:
+2025-10-10 17:27:04,754 - INFO - [MultimodalRAG.py.<module>:2128] -   - SQLite Database ('multimodal_doc_store.db') document records: 219
+2025-10-10 17:27:04,755 - INFO - [MultimodalRAG.py.<module>:2129] -   - Text Faiss Index ('my_text_vector_index.faiss') vectors: 0
+2025-10-10 17:27:04,755 - INFO - [MultimodalRAG.py.<module>:2130] -   - Image Faiss Index ('my_image_vector_index.faiss') vectors: 0
+2025-10-10 17:27:04,755 - INFO - [MultimodalRAG.py.<module>:2131] -   - Mean Faiss Index ('my_mean_vector_index.faiss') vectors: 0
+2025-10-10 17:27:04,755 - WARNING - [MultimodalRAG.py.<module>:2135] - WARNING: Database contains document records, but all Faiss indices are empty!
+2025-10-10 17:27:04,755 - WARNING - [MultimodalRAG.py.<module>:2136] -       This might indicate that the encoding process failed for all documents, or no valid vectors were generated.
+2025-10-10 17:27:04,755 - WARNING - [MultimodalRAG.py.<module>:2137] -       Subsequent retrieval operations will not be able to return results based on vector similarity. Please review Indexer and Encoder logs carefully.
+2025-10-10 17:27:04,755 - INFO - [MultimodalRAG.py.<module>:2147] - --- [Main Flow] Step 2 Complete. ---
+
+2025-10-10 17:27:04,970 - INFO - [MultimodalRAG.py.<module>:2154] - --- [Main Flow] Step 3: Initialize Retriever ---
+2025-10-10 17:27:04,970 - WARNING - [MultimodalRAG.py.<module>:2169] - Skipping Retriever initialization.
+2025-10-10 17:27:04,970 - WARNING - [MultimodalRAG.py.<module>:2170] -   Reason: Indexer initialized successfully, but all its Faiss indices are currently empty.
+2025-10-10 17:27:04,970 - WARNING - [MultimodalRAG.py.<module>:2171] -         This might be due to encoding issues, data problems, or index building logic. Please check detailed logs from Step 2.
+2025-10-10 17:27:04,971 - WARNING - [MultimodalRAG.py.<module>:2172] -         Retriever cannot perform effective operations without searchable vectors.
+2025-10-10 17:27:04,971 - INFO - [MultimodalRAG.py.<module>:2178] - --- [Main Flow] Step 3 Complete. ---
+
+2025-10-10 17:27:05,187 - INFO - [MultimodalRAG.py.<module>:2185] - --- [Main Flow] Step 4: Initialize Generator (will interact with ZhipuAI API) ---
+2025-10-10 17:27:05,187 - INFO - [MultimodalRAG.py.<module>:2199] - Environment variable 'ZHIPUAI_API_KEY' detected. Attempting to initialize Generator...
+2025-10-10 17:27:05,187 - INFO - [MultimodalRAG.py.__init__:1702] - 开始初始化 Generator，准备使用 ZhipuAI 模型: glm-4-flash
+2025-10-10 17:27:05,187 - INFO - [MultimodalRAG.py.__init__:1717] - 成功获取到 ZhipuAI API Key (来源可能是参数或环境变量)。
+2025-10-10 17:27:05,313 - INFO - [MultimodalRAG.py.__init__:1723] - ZhipuAI 客户端已使用模型 'glm-4-flash' 成功初始化。
+2025-10-10 17:27:05,313 - INFO - [MultimodalRAG.py.__init__:1733] - Generator 初始化成功完成。我已经准备好与大模型交互，生成答案了。
+2025-10-10 17:27:05,314 - INFO - [MultimodalRAG.py.<module>:2207] - --- [Main Flow] Step 4 Complete. ---
+
+2025-10-10 17:27:05,528 - INFO - [MultimodalRAG.py.<module>:2214] - --- [Main Flow] Step 5: Execute RAG Query Examples (Retrieve + Generate) ---
+2025-10-10 17:27:05,528 - CRITICAL - [MultimodalRAG.py.<module>:2476] - 
+CRITICAL SYSTEM ISSUE: RAG query example flow cannot execute because one or more core components failed to initialize.
+2025-10-10 17:27:05,528 - CRITICAL - [MultimodalRAG.py.<module>:2478] -   - Reason: Retriever initialization failed.
+2025-10-10 17:27:05,528 - CRITICAL - [MultimodalRAG.py.<module>:2479] -     Please carefully review the logs for Step 2 (Indexer initialization) and Step 3 (Retriever initialization) to identify the root cause.
+2025-10-10 17:27:05,528 - CRITICAL - [MultimodalRAG.py.<module>:2483] - Please resolve the initialization issues and retry.
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.<module>:2485] - --- [Main Flow] Step 5 (RAG Query Examples) Complete. ---
+
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.<module>:2491] - --- [Main Flow] Step 6: Cleanup and Close System Resources ---
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.<module>:2499] -   Retriever was not initialized or failed, no cleanup needed.
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.close:1994] - 开始关闭 Generator 实例...
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.close:1997] - Generator 实例关闭完成。
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.close:1303] - 开始关闭 Indexer 实例...
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py.save_indices:1236] - 开始尝试将所有 Faiss 索引保存到磁盘文件...
+2025-10-10 17:27:05,529 - INFO - [MultimodalRAG.py._save_single_index:1289] -   跳过：'文本(Text)' Faiss 索引为空 (ntotal=0)，因此不保存到 'multimodal_rag_system_output\data_storage\vector_indices\my_text_vector_index.faiss'。
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py._save_single_index:1289] -   跳过：'图像(Image)' Faiss 索引为空 (ntotal=0)，因此不保存到 'multimodal_rag_system_output\data_storage\vector_indices\my_image_vector_index.faiss'。
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py._save_single_index:1289] -   跳过：'平均(Mean)' Faiss 索引为空 (ntotal=0)，因此不保存到 'multimodal_rag_system_output\data_storage\vector_indices\my_mean_vector_index.faiss'。
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.save_indices:1254] - 所有 Faiss 索引的保存操作已完成（或已跳过空索引/不存在的索引）。
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.close:1306] - Indexer 实例关闭完成。所有 Faiss 索引已尝试保存。
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.<module>:2517] - --- [Main Flow] System resource cleanup and closing process complete. ---
+
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.<module>:2519] - 
+================================================================================
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.<module>:2520] - ========= Multimodal RAG System Example Program Execution Finished =========
+2025-10-10 17:27:05,530 - INFO - [MultimodalRAG.py.<module>:2521] - All output (logs, database, indices, query results) saved to the fixed top-level directory:
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2522] -   E:\_Python_ProgramPath\RAG学习\MultimodalRAG-main\multimodal_rag_system_output
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2523] - Key subdirectory overview:
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2524] -   - multimodal_rag_system_output\logs/
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2525] -   - multimodal_rag_system_output\data_storage\database/
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2526] -   - multimodal_rag_system_output\data_storage\vector_indices/
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2527] -   - multimodal_rag_system_output\query_session_results/
+2025-10-10 17:27:05,531 - INFO - [MultimodalRAG.py.<module>:2528] -     (Under query_session_results/, each 'query_XXX_...' subdirectory contains detailed input/output for a single query)
+2025-10-10 17:27:05,532 - WARNING - [MultimodalRAG.py.<module>:2529] - REMINDER: Since the top-level directory 'multimodal_rag_system_output' is fixed, running the script again with the same identifier will OVERWRITE its contents.
+2025-10-10 17:27:05,532 - INFO - [MultimodalRAG.py.<module>:2530] - ================================================================================
+
